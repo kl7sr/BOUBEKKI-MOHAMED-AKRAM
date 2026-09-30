@@ -78,19 +78,45 @@ if (timelineViewport && prevBtn && nextBtn) {
     });
 }
 
-// Contact Form Handler (UI demo feedback)
+// WhatsApp Contact Form Integration (+213 775 60 76 10)
+const WHATSAPP_PHONE = '213775607610';
 const contactForm = document.querySelector('.contact-form');
+
 if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
+
+        const nameInput = document.getElementById('c-name');
+        const emailInput = document.getElementById('c-email');
+        const serviceSelect = document.getElementById('c-service');
+        const messageInput = document.getElementById('c-message');
+
+        const name = nameInput ? nameInput.value.trim() : '';
+        const email = emailInput ? emailInput.value.trim() : '';
+        const service = serviceSelect && serviceSelect.selectedIndex > 0
+            ? serviceSelect.options[serviceSelect.selectedIndex].text
+            : '';
+        const message = messageInput ? messageInput.value.trim() : '';
+
+        // Build formatted message for WhatsApp
+        let text = `Hello Akram,\nI'm reaching out through your portfolio website.\n\n`;
+        if (name) text += `*Name:* ${name}\n`;
+        if (email) text += `*Email:* ${email}\n`;
+        if (service) text += `*Project:* ${service}\n`;
+        if (message) text += `\n*Message:*\n${message}\n`;
+
+        const waUrl = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(text)}`;
+
+        // Open WhatsApp in a new tab / application
+        window.open(waUrl, '_blank', 'noopener,noreferrer');
+
         const submitBtn = contactForm.querySelector('.btn-submit span');
         if (submitBtn) {
             const originalText = submitBtn.textContent;
-            submitBtn.textContent = 'Message Sent (Demo)';
+            submitBtn.textContent = 'Opening WhatsApp...';
             setTimeout(() => {
-                contactForm.reset();
                 submitBtn.textContent = originalText;
-            }, 2400);
+            }, 3000);
         }
     });
 }

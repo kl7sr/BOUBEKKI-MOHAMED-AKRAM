@@ -78,10 +78,9 @@ if (timelineViewport && prevBtn && nextBtn) {
     });
 }
 
-// Contact Form Integration (WhatsApp + Optional Google Sheet Logging)
+// Contact Form Integration (WhatsApp + Google Sheet Logging)
 const WHATSAPP_PHONE = '213775607610';
-// Paste your deployed Google Apps Script Web App URL below when ready:
-const GOOGLE_SHEET_URL = ''; 
+const GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfycbwHiS-i-CWd0V_oTcBZEyjivNmLViPmhzr-F75o3gHYy_fVnGmO_JaMp5Q7si2mG08Z/exec'; 
 
 const contactForm = document.querySelector('.contact-form');
 

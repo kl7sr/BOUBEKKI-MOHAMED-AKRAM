@@ -78,8 +78,11 @@ if (timelineViewport && prevBtn && nextBtn) {
     });
 }
 
-// WhatsApp Contact Form Integration (+213 775 60 76 10)
+// Contact Form Integration (WhatsApp + Optional Google Sheet Logging)
 const WHATSAPP_PHONE = '213775607610';
+// Paste your deployed Google Apps Script Web App URL below when ready:
+const GOOGLE_SHEET_URL = ''; 
+
 const contactForm = document.querySelector('.contact-form');
 
 if (contactForm) {
@@ -98,7 +101,27 @@ if (contactForm) {
             : '';
         const message = messageInput ? messageInput.value.trim() : '';
 
-        // Build formatted message for WhatsApp
+        // 1. Send data to Google Sheets in the background (if URL is configured)
+        if (GOOGLE_SHEET_URL) {
+            try {
+                fetch(GOOGLE_SHEET_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        name: name,
+                        email: email,
+                        service: service,
+                        message: message,
+                        timestamp: new Date().toISOString()
+                    })
+                }).catch((err) => console.log('Sheet logging notice:', err));
+            } catch (err) {
+                console.log('Sheet logging notice:', err);
+            }
+        }
+
+        // 2. Build formatted message for WhatsApp
         let text = `Hello Akram,\nI'm reaching out through your portfolio website.\n\n`;
         if (name) text += `*Name:* ${name}\n`;
         if (email) text += `*Email:* ${email}\n`;
@@ -107,7 +130,7 @@ if (contactForm) {
 
         const waUrl = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(text)}`;
 
-        // Open WhatsApp in a new tab / application
+        // 3. Open WhatsApp in a new tab / application
         window.open(waUrl, '_blank', 'noopener,noreferrer');
 
         const submitBtn = contactForm.querySelector('.btn-submit span');

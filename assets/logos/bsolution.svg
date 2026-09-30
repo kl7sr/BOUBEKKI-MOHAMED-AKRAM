@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <!-- White Background -->
+  <rect width="100" height="100" rx="14" fill="#FFFFFF"/>
+  <!-- 3-Tier Isometric Blue Ribbon Mark (Bsolution) -->
+  <g transform="translate(14, 12) scale(0.72)">
+    <!-- Top Segment (Bright Cyan / Sky Blue) -->
+    <path d="M 38 4 L 78 27 L 60 38 L 20 15 Z" fill="#00AEEF"/>
+    <path d="M 20 15 L 60 38 L 60 50 L 20 27 Z" fill="#0093D8"/>
+
+    <!-- Middle Segment (Vibrant Royal Blue) -->
+    <path d="M 20 38 L 60 61 L 42 72 L 2 49 Z" fill="#0066CC"/>
+    <path d="M 60 61 L 100 38 L 100 50 L 60 73 Z" fill="#004D99"/>
+
+    <!-- Bottom Segment (Deep Navy Blue) -->
+    <path d="M 38 72 L 78 95 L 60 106 L 20 83 Z" fill="#003882"/>
+    <path d="M 20 83 L 60 106 L 60 118 L 20 95 Z" fill="#002255"/>
+  </g>
+</svg>

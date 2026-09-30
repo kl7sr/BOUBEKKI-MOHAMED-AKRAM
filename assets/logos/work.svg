@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <!-- Light Neutral Background -->
+  <rect width="100" height="100" rx="14" fill="#E5E8EB"/>
+  <!-- Standard Company / Work Building Placeholder (LinkedIn Style) -->
+  <g>
+    <!-- Left Lower Building Block (Slate Navy) -->
+    <rect x="23" y="44" width="24" height="36" rx="2" fill="#4B5668"/>
+    <!-- Windows Left -->
+    <rect x="28" y="50" width="5" height="5" rx="1" fill="#E5E8EB"/>
+    <rect x="37" y="50" width="5" height="5" rx="1" fill="#E5E8EB"/>
+    <rect x="28" y="60" width="5" height="5" rx="1" fill="#E5E8EB"/>
+    <rect x="37" y="60" width="5" height="5" rx="1" fill="#E5E8EB"/>
+    <rect x="28" y="70" width="5" height="5" rx="1" fill="#E5E8EB"/>
+    <rect x="37" y="70" width="5" height="5" rx="1" fill="#E5E8EB"/>
+
+    <!-- Right Taller Building Block (Soft Slate Blue) -->
+    <rect x="49" y="22" width="28" height="58" rx="2" fill="#8FA7BF"/>
+    <!-- Windows Right -->
+    <rect x="55" y="29" width="6" height="6" rx="1" fill="#E5E8EB"/>
+    <rect x="65" y="29" width="6" height="6" rx="1" fill="#E5E8EB"/>
+    <rect x="55" y="39" width="6" height="6" rx="1" fill="#E5E8EB"/>
+    <rect x="65" y="39" width="6" height="6" rx="1" fill="#E5E8EB"/>
+    <rect x="55" y="49" width="6" height="6" rx="1" fill="#E5E8EB"/>
+    <rect x="65" y="49" width="6" height="6" rx="1" fill="#E5E8EB"/>
+    <rect x="55" y="59" width="6" height="6" rx="1" fill="#E5E8EB"/>
+    <rect x="65" y="59" width="6" height="6" rx="1" fill="#E5E8EB"/>
+  </g>
+</svg>

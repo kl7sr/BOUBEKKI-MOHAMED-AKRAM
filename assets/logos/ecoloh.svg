@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <!-- Green Rounded Background -->
+  <rect width="100" height="100" rx="14" fill="#389E30"/>
+  <!-- Ecoloh White Emblem: Crescent & Star Motif -->
+  <g fill="#FFFFFF">
+    <!-- Main Crescent Arc -->
+    <path d="M 50 18 C 32.3 18 18 32.3 18 50 C 18 67.7 32.3 82 50 82 C 67.7 82 82 67.7 82 50 C 82 45.8 81.2 41.8 79.8 38 C 76.5 48.5 66.5 56 54.5 56 C 40.7 56 29.5 44.8 29.5 31 C 29.5 25.4 31.4 20.3 34.5 16.2 C 39.2 17.3 44.5 18 50 18 Z"/>
+    <!-- 4-point Sparkle / Star in top-right opening -->
+    <path d="M 68 22 Q 68 30 76 30 Q 68 30 68 38 Q 68 30 60 30 Q 68 30 68 22 Z"/>
+  </g>
+</svg>

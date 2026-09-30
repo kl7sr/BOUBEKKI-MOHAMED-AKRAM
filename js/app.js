@@ -100,23 +100,26 @@ if (contactForm) {
             : '';
         const message = messageInput ? messageInput.value.trim() : '';
 
-        // 1. Send data to Google Sheets in the background (if URL is configured)
+        // 1. Send data to Google Sheets in the background (runs reliably with keepalive & no-cors)
         if (GOOGLE_SHEET_URL) {
+            const payload = JSON.stringify({
+                name: name,
+                email: email,
+                service: service,
+                message: message,
+                timestamp: new Date().toISOString()
+            });
+
             try {
                 fetch(GOOGLE_SHEET_URL, {
                     method: 'POST',
                     mode: 'no-cors',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        name: name,
-                        email: email,
-                        service: service,
-                        message: message,
-                        timestamp: new Date().toISOString()
-                    })
-                }).catch((err) => console.log('Sheet logging notice:', err));
+                    keepalive: true,
+                    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                    body: payload
+                }).catch((err) => console.log('Sheet notice:', err));
             } catch (err) {
-                console.log('Sheet logging notice:', err);
+                console.log('Sheet notice:', err);
             }
         }
 

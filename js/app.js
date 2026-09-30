@@ -77,3 +77,20 @@ if (timelineViewport && prevBtn && nextBtn) {
         timelineViewport.scrollLeft = scrollLeft - walk;
     });
 }
+
+// Contact Form Handler (UI demo feedback)
+const contactForm = document.querySelector('.contact-form');
+if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const submitBtn = contactForm.querySelector('.btn-submit span');
+        if (submitBtn) {
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Message Sent (Demo)';
+            setTimeout(() => {
+                contactForm.reset();
+                submitBtn.textContent = originalText;
+            }, 2400);
+        }
+    });
+}
